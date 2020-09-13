@@ -1,8 +1,9 @@
 from django.shortcuts import render
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponseRedirect
 import json
 import datetime
 from .models import *
+from django.contrib import auth
 
 def store(request):
 
@@ -60,8 +61,8 @@ def updateItem(request):
 	print('Product:', productId)
 
 	customer = request.user.customer
-	product = Product.objects.get(id=productId)
 	order, created = Order.objects.get_or_create(customer=customer, complete=False)
+	product = Product.objects.get(id=productId)
 
 	orderItem, created = OrderItem.objects.get_or_create(order=order, product=product)
 
@@ -104,3 +105,23 @@ def processOrder(request):
 		print('User is not logged in')
 
 	return JsonResponse('Payment submitted..', safe=False)
+
+
+def login_view(request):
+    username = request.POST.get('username', '')
+    password = request.POST.get('password', '')
+    user = auth.authenticate(username=username, password=password)
+    if user is not None and user.is_active:
+        # Correct password, and the user is marked "active"
+        auth.login(request, user)
+        # Redirect to a success page.
+        return HttpResponseRedirect("/account/loggedin/")
+    else:
+        # Show an error page
+        return HttpResponseRedirect("/account/invalid/")
+
+
+def logout_view(request):
+    auth.logout(request)
+    # Redirect to a success page.
+    return HttpResponseRedirect("/account/loggedout/")
