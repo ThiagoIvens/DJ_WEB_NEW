@@ -2,8 +2,13 @@ from django.shortcuts import render
 from django.http import JsonResponse, HttpResponseRedirect
 import json
 import datetime
+
 from .models import *
 from django.contrib import auth
+from django.contrib.auth.models import User
+from rest_framework import viewsets
+from store.serializers import UserSerializer
+
 
 def store(request):
 
@@ -76,7 +81,7 @@ def updateItem(request):
 	if orderItem.quantity <= 0:
 		orderItem.delete()
 
-	return JsonResponse('Item was added', safe=False)
+	return JsonResponse('Item foi adicionado', safe=False)
 
 def processOrder(request):
 	transaction_id = datetime.datetime.now().timestamp()
@@ -102,9 +107,9 @@ def processOrder(request):
 			zipcode=data['shipping']['zipcode'],
 			)
 	else:
-		print('User is not logged in')
+		print('Usuário no está logado...')
 
-	return JsonResponse('Payment submitted..', safe=False)
+	return JsonResponse('Pagamento submetido..', safe=False)
 
 
 def login_view(request):
@@ -125,3 +130,11 @@ def logout_view(request):
     auth.logout(request)
     # Redirect to a success page.
     return HttpResponseRedirect("/account/loggedout/")
+
+
+class UserViewSet(viewsets.ModelViewSet):
+	serializer_class = UserSerializer
+	queryset = User.objects.all()
+
+
+

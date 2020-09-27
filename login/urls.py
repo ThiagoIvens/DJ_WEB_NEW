@@ -5,7 +5,7 @@ from . import views
 
 urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
-    path('accounts/profile/', auth_views.PasswordChangeView.as_view()),
+    path('accounts/changePassword/', auth_views.PasswordChangeView.as_view()),
     path('register/', views.register, name='register'),
 
 ]

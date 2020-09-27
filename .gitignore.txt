@@ -1,0 +1,4 @@
+ambienteVirtual
+.idea
+env
+
