@@ -121,11 +121,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
-
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
-]
 
 MEDIA_URL = '/images/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
@@ -134,6 +131,7 @@ LOGIN_REDIRECT_URL = 'store'
 LOGOUT_REDIRECT_URL = 'store'
 
 CRISPY_TEMPLATE_PACK="bootstrap4"
+<<<<<<< HEAD
 
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
@@ -151,3 +149,5 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10
 }
+=======
+>>>>>>> ec0f69bbed88b807b85dddef970d2cdfc0c6a5f2
