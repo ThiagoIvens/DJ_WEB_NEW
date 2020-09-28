@@ -3,7 +3,7 @@ from typing import List, Any
 from django.contrib.auth.models import User
 from rest_framework import serializers
 
-from store.models import Product, Order, OrderItem, ShippingAddress
+from store.models import Product, Order, OrderItem, ShippingAddress, Customer
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
@@ -16,7 +16,14 @@ class ProductSerializer(serializers.HyperlinkedModelSerializer):
         model = Product
         exclude = []
 
+class CustomerSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Customer
+        exclude = []
+
 class OrderSerializer(serializers.HyperlinkedModelSerializer):
+    lookup_field = 'customer'
+    url = serializers.HyperlinkedIdentityField(view_name="customer")
     class Meta:
         model = Order
         exclude = []

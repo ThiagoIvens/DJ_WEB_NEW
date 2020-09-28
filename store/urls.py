@@ -5,11 +5,11 @@ from rest_framework.routers import DefaultRouter
 from . import views
 
 router = DefaultRouter()
-router.register(r'users', views.UserViewSet)
-#router.register(r'product', views.ProductSerializer)
-#router.register(r'order', views.OrderSerializer)
-#router.register(r'orderItem', views.OrderItemSerializer)
-#router.register(r'ShippingAddress', views.ShippingAddressSerializer)
+router.register(r'user', views.UserViewSet)
+router.register(r'product', views.ProductViewSet)
+router.register(r'order', views.OrderViewSet)
+router.register(r'orderItem', views.OrderItemViewSet)
+router.register(r'ShippingAddress', views.ShippingAddressViewSet)
 
 urlpatterns = [
 	path('', views.store, name="store"),

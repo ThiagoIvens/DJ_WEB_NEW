@@ -7,7 +7,8 @@ from .models import *
 from django.contrib import auth
 from django.contrib.auth.models import User
 from rest_framework import viewsets
-from store.serializers import UserSerializer
+from store.serializers import UserSerializer, ProductSerializer, ShippingAddressSerializer, OrderItemSerializer, \
+	OrderSerializer
 
 
 def store(request):
@@ -137,4 +138,18 @@ class UserViewSet(viewsets.ModelViewSet):
 	queryset = User.objects.all()
 
 
+class ProductViewSet(viewsets.ModelViewSet):
+	serializer_class = ProductSerializer
+	queryset = Product.objects.all()
 
+class OrderViewSet(viewsets.ModelViewSet):
+	serializer_class = OrderSerializer
+	queryset = Order.objects.all()
+
+class OrderItemViewSet(viewsets.ModelViewSet):
+	serializer_class = OrderItemSerializer
+	queryset = OrderItem.objects.all()
+
+class ShippingAddressViewSet(viewsets.ModelViewSet):
+	serializer_class = ShippingAddressSerializer
+	queryset = ShippingAddress.objects.all()
