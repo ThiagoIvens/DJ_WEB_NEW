@@ -6,10 +6,10 @@ from . import views
 
 router = DefaultRouter()
 router.register(r'users', views.UserViewSet)
-router.register(r'product', views.ProductSerializer)
-router.register(r'order', views.OrderSerializer)
-router.register(r'orderItem', views.OrderItemSerializer)
-router.register(r'ShippingAddress', views.ShippingAddressSerializer)
+#router.register(r'product', views.ProductSerializer)
+#router.register(r'order', views.OrderSerializer)
+#router.register(r'orderItem', views.OrderItemSerializer)
+#router.register(r'ShippingAddress', views.ShippingAddressSerializer)
 
 urlpatterns = [
 	path('', views.store, name="store"),
