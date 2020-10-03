@@ -6,25 +6,133 @@
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
     </expand>
     <select />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c33b334d-fbe2-4b47-adca-cf5afe74b96b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/css/base.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/changelists.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/css/changelists.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/css/dashboard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/forms.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/css/forms.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/responsive.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/css/responsive.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/responsive_rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/css/responsive_rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/css/rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/vendor/select2/LICENSE-SELECT2.md" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/css/vendor/select2/LICENSE-SELECT2.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/vendor/select2/select2.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/css/vendor/select2/select2.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/vendor/select2/select2.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/css/vendor/select2/select2.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/widgets.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/css/widgets.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/SelectBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/SelectBox.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/SelectFilter2.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/SelectFilter2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/actions.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/actions.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/admin/DateTimeShortcuts.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/admin/DateTimeShortcuts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/admin/RelatedObjectLookups.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/admin/RelatedObjectLookups.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/autocomplete.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/autocomplete.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/calendar.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/calendar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/cancel.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/cancel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/change_form.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/change_form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/collapse.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/collapse.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/collapse.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/collapse.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/core.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/core.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/inlines.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/inlines.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/inlines.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/inlines.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/jquery.init.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/jquery.init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/popup_response.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/popup_response.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/prepopulate.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/prepopulate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/prepopulate.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/prepopulate.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/prepopulate_init.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/prepopulate_init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/urlify.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/urlify.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/LICENSE.md" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/LICENSE.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ar.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/az.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/az.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/bg.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/bg.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ca.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ca.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/cs.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/cs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/da.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/da.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/de.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/de.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/el.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/el.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/en.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/en.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/es.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/es.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/et.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/et.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/eu.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/eu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/fa.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/fa.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/fi.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/fi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/fr.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/fr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/gl.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/gl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/he.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/he.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/hi.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/hi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/hr.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/hr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/hu.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/hu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/id.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/id.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/is.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/is.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/it.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/it.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ja.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ja.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/km.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/km.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ko.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ko.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/lt.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/lt.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/lv.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/lv.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/mk.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/mk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ms.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ms.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/nb.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/nb.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/nl.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/nl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/pl.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/pl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/pt-BR.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/pt-BR.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/pt.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/pt.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ro.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ro.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ru.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ru.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/sk.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/sk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/sr-Cyrl.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/sr-Cyrl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/sr.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/sr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/sv.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/sv.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/th.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/th.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/tr.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/tr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/uk.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/uk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/vi.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/vi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/zh-CN.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/zh-CN.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/zh-TW.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/zh-TW.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/select2.full.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/select2.full.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/select2.full.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/select2/select2.full.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/xregexp/LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/xregexp/LICENSE.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/xregexp/xregexp.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/xregexp/xregexp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/xregexp/xregexp.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/js/vendor/xregexp/xregexp.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/arrow-down.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/arrow-up.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/bolo_vulcao.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/bolodepote.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/bolodepote_iV0P34u.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/bolokit.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/bolokit_bEHsN5j.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/buteco_na_caixa.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/buteco_na_caixa_bmt3L61.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/cart.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/docinhos2.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/docinhos2_a7kn2tX.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/festa_na_caixa.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/festanacaixa.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/festanacaixa_0DKX6Gn.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/imagem2.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/imagem2_9CxxhUO.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/imagem3.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/imagem3_18EntbM.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/imagem3_GbsRg7p.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/primeiro_5DZIFvg.jpeg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/store/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/store/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/store/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/store/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/store/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/store/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/registration/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/store/cart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/store/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/store/checkout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/store/store.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +159,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../DJ_WEB_teste" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -81,9 +189,17 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="719" y="327" key="#com.intellij.fileTypes.FileTypeChooser/1920.270.1280.690/0.0.1920.1050@0.0.1920.1050" timestamp="1600009615694" />
-    <state x="740" y="280" key="FileChooserDialogImpl" timestamp="1601234064757">
+    <state x="690" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1601762164143">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="740" y="280" key="FileChooserDialogImpl/-1280.235.1280.690/0.0.1920.1050@0.0.1920.1050" timestamp="1601234064757" />
+    <state x="690" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1280.235.1280.690/0.0.1920.1050@0.0.1920.1050" timestamp="1601762164143" />
+    <state x="740" y="280" key="FileChooserDialogImpl" timestamp="1601737125921">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="740" y="280" key="FileChooserDialogImpl/-1280.235.1280.690/0.0.1920.1050@0.0.1920.1050" timestamp="1601737125921" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1601736321389">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/-1280.235.1280.690/0.0.1920.1050@0.0.1920.1050" timestamp="1601736321389" />
   </component>
 </project>

@@ -1,152 +1,282 @@
-{% extends 'main.html' %}
+<!DOCTYPE html>
 {% load static %}
-{% block content %}
-     <div class="row">
-		<div class="col-lg-6">
-			<div class="box-element" id="form-wrapper">
-				<form id="form">
-					<div id="user-info">
-						<div class="form-field">
-							<input required class="form-control" type="text" name="name" placeholder="Nome">
-						</div>
-						<div class="form-field">
-							<input required class="form-control" type="email" name="email" placeholder="Email">
-						</div>
-					</div>
+<html lang="zxx">
 
-					<div id="shipping-info">
-						<hr>
-						<p>Informação de envio:</p>
-						<hr>
-						<div class="form-field">
-							<input class="form-control" type="text" name="address" placeholder="Endereço">
-						</div>
-						<div class="form-field">
-							<input class="form-control" type="text" name="city" placeholder="Cidade">
-						</div>
-						<div class="form-field">
-							<input class="form-control" type="text" name="state" placeholder="Estado">
-						</div>
-						<div class="form-field">
-							<input class="form-control" type="text" name="zipcode" placeholder="CEP">
-						</div>
-						<div class="form-field">
-							<input class="form-control" type="text" name="country" placeholder="País">
-						</div>
-					</div>
 
-					<hr>
-					<input id="form-button" class="btn btn-success btn-block" type="submit" value="Continuar">
-				</form>
-			</div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Ogani Template">
+    <meta name="keywords" content="Ogani, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chocolateria da Diva</title>
 
-			<br>
-			<div class="box-element hidden" id="payment-info">
-				<small>Opção de pagamento</small>
-				<button id="make-payment">Fazer o pagamento</button>
-			</div>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
 
-		</div>
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/elegant-icons.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/jquery-ui.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+</head>
 
-		<div class="col-lg-6">
-			<div class="box-element">
-				<a  class="btn btn-outline-dark" href="{% url 'cart' %}">&#x2190; Voltar para o Carrinho</a>
-				<hr>
-				<h3>Ordem de compra:</h3>
-				<hr>
-				{% for item in items %}
-				<div class="cart-row">
-					<div style="flex:2"><img class="row-image" src="{{item.product.imageURL}}"></div>
-					<div style="flex:2"><p>{{item.product.name}}</p></div>
-					<div style="flex:1"><p>R${{item.product.price|floatformat:2}}</p></div>
-					<div style="flex:1"><p>x{{item.quantity}}</p></div>
-				</div>
-				{% endfor %}
-				<h5>Itens:   {{order.get_cart_items}}</h5>
-				<h5>Total:   R${{order.get_cart_total|floatformat:2}}</h5>
-			</div>
-		</div>
-	</div>
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
 
-	<script type="text/javascript">
-		var shipping = '{{order.shipping}}'
-		var total = '{{order.get_cart_total|floatformat:2}}'
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="header__top__left">
+                            <ul>
+                                <li><i class="fa fa-envelope"></i> chocolateria.diva@gmail.com</li>
+                                <li>Frete gratis acima de R$150,00</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="header__top__right">
+                            <div class="header__top__right__social">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a class="header__top__right__auth">
+                                    {% if user.is_authenticated %}
+                                        <a href="#">Olá {{ user.username }}</a>
+                                        <a href="{% url 'logout' %}"><i class="fa fa-sign-out" aria-hidden="true"></i> Sair</a>
+                                    {% else %}
+                                        <a href="{% url 'login' %}"><i class="fa fa-user"></i> Login</a>
+                                    {% endif %}
+<!--                                <a href="{% url 'login' %}"><i class="fa fa-user"></i> Login</a>-->
+                            </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="header__logo">
+                        <a href="{% url 'index' %}}"><img style="height:70px;" src="{% static 'img/logo.jpg' %}" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <nav class="header__menu">
+                        <ul>
+                            <li class="active"><a href="{% url 'index' %}">Inicio</a></li>
+                            <li><a href="{% url 'shop-grid' %}">Loja</a></li>
+                            <li><a href="#">Paginas</a>
+                                <ul class="header__menu__dropdown">
+                                    <li><a href="{% url 'shoping-cart' %}">Carrinho de Compra</a></li>
+                                    <li><a href="{% url 'checkout' %}">Terminar Pedido</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="{% url 'contact' %}">Contato</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-3">
+                    <div class="header__cart">
+                        <ul>
+                            <li><a href="{% url 'shoping-cart' %}"><i class="fa fa-shopping-bag"></i> <span>{{cartItems}}</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="humberger__open">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
 
-		if (shipping == 'False'){
-		 	document.getElementById('shipping-info').innerHTML = ''
-		}
+    <!-- Checkout Section Begin -->
+    <section class="checkout spad">
+        <div class="container">
+            <div class="checkout__form">
+                <h4>Detalhes de cobrança</h4>
+                <form action="#">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-6">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="checkout__input">
+                                        <p>Primeiro Nome<span>*</span></p>
+                                        <input type="text">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="checkout__input">
+                                        <p>Ultimo Nome<span>*</span></p>
+                                        <input type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="checkout__input">
+                                <p>País<span>*</span></p>
+                                <input type="text">
+                            </div>
+                            <div class="checkout__input">
+                                <p>Endereço<span>*</span></p>
+                                <input type="text" placeholder="Rua" class="checkout__input__add">
+                                <input type="text" placeholder="apto, n°, outro...">
+                            </div>
+                            <div class="checkout__input">
+                                <p>Cidade<span>*</span></p>
+                                <input type="text">
+                            </div>
+                            <div class="checkout__input">
+                                <p>Estado<span>*</span></p>
+                                <input type="text">
+                            </div>
+                            <div class="checkout__input">
+                                <p>CEP<span>*</span></p>
+                                <input type="text">
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="checkout__input">
+                                        <p>Telefone<span>*</span></p>
+                                        <input type="text">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="checkout__input">
+                                        <p>Email<span>*</span></p>
+                                        <input type="text">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END SHIPING ADDRESS -->
 
-		if (user != 'AnonymousUser'){
-		 	document.getElementById('user-info').innerHTML = ''
-		 }
+                        <!-- ORDER -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="checkout__order">
+                                <h4>Seu Pedido</h4>
+                                <div class="checkout__order__products">Produtos <span>Total</span></div>
+                                {% for item in items %}
+                                    <ul>
+                                        <li>{{item.product.name}}<span>R${{item.product.price|floatformat:2}}</span></li>
+                                    </ul>
+                                {% endfor %}
+                                <div class="checkout__order__total">Total <span>R${{order.get_cart_total|floatformat:2}}</span></div>
+                                <div class="checkout__input__checkbox">
+                                    <label for="payment">
+                                        Check Payment
+                                        <input type="checkbox" id="payment">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <div class="checkout__input__checkbox">
+                                    <label for="paypal">
+                                        Paypal
+                                        <input type="checkbox" id="paypal">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <button type="submit" class="site-btn">FINALIZAR</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- Checkout Section End -->
 
-		if (shipping == 'False' && user != 'AnonymousUser'){
-			//Hide entire form if user is logged in and shipping is false
-				document.getElementById('form-wrapper').classList.add("hidden");
-				//Show payment if logged in user wants to buy an item that does not require shipping
-			    document.getElementById('payment-info').classList.remove("hidden");
-		}
+<!-- Parte de Baixo -->
+        <!-- Footer Section Begin -->
+        <footer class="footer spad">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="footer__about">
+                            <div class="footer__about__logo">
+                                <a href="{% url 'index' %}"><img src="{% static 'img/logo.jpg' %}" alt=""/> </a>
+                            </div>
+                            <ul>
+                                <li>Localização: R. Tal, Centro, n° 001</li>
+                                <li>Numero: (47) 9 9723-7976</li>
+                                <li>Email: chocolateria.diva@gmail.com</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
+                        <div class="footer__widget">
+                            <h6>Uteis</h6>
+                            <ul>
+                                <li><a href="#">Sobre nós</a></li>
+                                <li><a href="#">Sobre a loja</a></li>
+                                <li><a href="#">Compra segura</a></li>
+                                <li><a href="#">Delivery</a></li>
+                                <li><a href="#">Inovação</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="#">Quem somos nós</a></li>
+                                <li><a href="#">Nossos serviços</a></li>
+                                <li><a href="#">Projetos</a></li>
+                                <li><a href="#">Contato</a></li>
+                                <li><a href="#">Politicas de Privacidade</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+                        <div class="footer__widget">
+                            <h6>Nos acompanhe para mais novidades</h6>
+                            <p>Ofertas diretamente no e-mail</p>
+                            <form action="#">
+                                <input type="text" placeholder="Email">
+                                <button type="submit" class="site-btn">Inscrever</button>
+                            </form>
+                            <div class="footer__widget__social">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="footer__copyright">
+                            <div class="footer__copyright__text"><p>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                                All rights reserved | This template is made with
+                                <i class="fa fa-heart" aria-hidden="true"></i> by
+                                <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></div>
+                            <div class="footer__copyright__payment"><img src="{% static 'img/payment-item.png' %}" alt="" /></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer Section End -->
 
-		var form = document.getElementById('form')
-		form.addEventListener('submit', function(e){
-	    	e.preventDefault()
-	    	console.log('Form Submitted...')
-	    	document.getElementById('form-button').classList.add("hidden");
-	    	document.getElementById('payment-info').classList.remove("hidden");
-	    })
+        <!-- Js Plugins -->
+        <script type="text/javascript" src="{% static 'js/jquery-3.3.1.min.js' %}" ></script>
+        <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery-ui.min.js' %}" ></script>
+        <script type="text/javascript" src="{% static 'js/jquery.slicknav.js' %}" ></script>
+        <script type="text/javascript" src="{% static 'js/mixitup.min.js' %}" ></script>
+        <script type="text/javascript" src="{% static 'js/owl.carousel.min.js' %}" ></script>
+        <script type="text/javascript" src="{% static 'js/main.js' %}" ></script>
+        <script type="text/javascript" src="{% static 'js/cart.js' %}" ></script>
 
-	    document.getElementById('make-payment').addEventListener('click', function(e){
-	    	submitFormData()
-	    })
+    <!-- Fim da Parte de Baixo -->
 
-	    function submitFormData(){
-	    	console.log('Payment button clicked')
-
-	    	var userFormData = {
-				'name':null,
-				'email':null,
-				'total':total,
-			}
-
-			var shippingInfo = {
-				'address':null,
-				'city':null,
-				'state':null,
-				'zipcode':null,
-			}
-
-			if (shipping != 'False'){
-	    		shippingInfo.address = form.address.value
-		    	shippingInfo.city = form.city.value
-		    	shippingInfo.state = form.state.value
-		    	shippingInfo.zipcode = form.zipcode.value
-	    	}
-
-	    	if (user == 'AnonymousUser'){
-	    		userFormData.name = form.name.value
-	    		userFormData.email = form.email.value
-	    	}
-
-	    	console.log('Shipping Info:', shippingInfo)
-	    	console.log('User Info:', userFormData)
-
-	    	var url = "/process_order/"
-	    	fetch(url, {
-	    		method:'POST',
-	    		headers:{
-	    			'Content-Type':'applicaiton/json',
-	    			'X-CSRFToken':csrftoken,
-	    		},
-	    		body:JSON.stringify({'form':userFormData, 'shipping':shippingInfo}),
-
-	    	})
-	    	.then((response) => response.json())
-	    	.then((data) => {
-				  console.log('Success:', data);
-				  alert('Transaction completed');
-				  window.location.href = "{% url 'store' %}"
-
-				})
-	    }
-	</script>
-{% endblock content %}
+    </body>
+</html>
