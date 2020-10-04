@@ -19,9 +19,6 @@ urlpatterns = [
 	path('checkout/', views.checkout, name="checkout"),
 	path('contact/', views.contact, name="contact"),
 
-	# BLOG
-	path('blog/', views.blog, name="blog"),
-	path('blog-details/', views.blog_details, name="blog-details"),
 
 	# ordens e atualizar item
 	path('update_item/', views.updateItem, name="update_item"),

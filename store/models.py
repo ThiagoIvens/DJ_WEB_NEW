@@ -8,23 +8,6 @@ from django.conf import settings
 
 # Create your models here.
 
-# class Customer(models.Model):
-#     customer = models.OneToOneField(User, on_delete=models.CASCADE)
-#     name = models.CharField(max_length=200, null=True)
-#     email = models.CharField(max_length=200)
-#
-#     def __str__(self):
-#         return self.name
-#
-#     @receiver(post_save, sender=User)
-#     def create_user_customer(sender, instance, created, **kwargs):
-#         if created:
-#             Customer.objects.create(customer=instance)
-#
-#     @receiver(post_save, sender=User)
-#     def save_user_customer(sender, instance, **kwargs):
-#         instance.customer.save()
-
 class Product(models.Model):
     name = models.CharField(max_length=200)
     price = models.FloatField()
@@ -87,7 +70,6 @@ class OrderItem(models.Model):
 
 
 class ShippingAddress(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     order = models.ForeignKey(Order, on_delete=models.SET_NULL, null=True)
     address = models.CharField(max_length=200, null=False)

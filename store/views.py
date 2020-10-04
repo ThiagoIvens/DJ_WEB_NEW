@@ -13,8 +13,8 @@ from store.serializers import UserSerializer, ProductSerializer, ShippingAddress
 
 def index(request):
 	if request.user.is_authenticated:
-		user = request.user
-		order, created = Order.objects.get_or_create(user=user, complete=False)
+		customer = request.user.customer
+		order, created = Order.objects.get_or_create(customer=customer, complete=False)
 		items = order.orderitem_set.all()
 		cartItems = order.get_cart_items
 	else:
@@ -25,12 +25,12 @@ def index(request):
 
 	products = Product.objects.all()
 	context = {'products':products, 'cartItems':cartItems}
-	return render(request, 'blog/blog-details.html', context)
+	return render(request, 'store/index.html', context)
 
 def shop_grid(request):
 	if request.user.is_authenticated:
-		user = request.user
-		order, created = Order.objects.get_or_create(user=user, complete=False)
+		customer = request.user.customer
+		order, created = Order.objects.get_or_create(customer=customer, complete=False)
 		items = order.orderitem_set.all()
 		cartItems = order.get_cart_items
 	else:
@@ -41,12 +41,12 @@ def shop_grid(request):
 
 	products = Product.objects.all()
 	context = {'products':products, 'cartItems':cartItems}
-	return render(request, 'blog/blog-details.html', context)
+	return render(request, 'store/shop-grid.html', context)
 
 def shoping_cart(request):
 	if request.user.is_authenticated:
-		user = request.user
-		order, created = Order.objects.get_or_create(user=user, complete=False)
+		customer = request.user.customer
+		order, created = Order.objects.get_or_create(customer=customer, complete=False)
 		items = order.orderitem_set.all()
 		cartItems = order.get_cart_items
 	else:
@@ -58,11 +58,12 @@ def shoping_cart(request):
 	products = Product.objects.all()
 	context = {'products':products, 'cartItems':cartItems}
 	return render(request, 'blog/blog-details.html', context)
+	return render(request, 'store/shoping-cart.html', context)
 
 def checkout(request):
 	if request.user.is_authenticated:
-		user = request.user
-		order, created = Order.objects.get_or_create(user=user, complete=False)
+		customer = request.user.customer
+		order, created = Order.objects.get_or_create(customer=customer, complete=False)
 		items = order.orderitem_set.all()
 		cartItems = order.get_cart_items
 	else:
@@ -73,12 +74,12 @@ def checkout(request):
 
 	products = Product.objects.all()
 	context = {'products':products, 'cartItems':cartItems}
-	return render(request, 'blog/blog-details.html', context)
+	return render(request, 'store/checkout.html', context)
 
 def contact(request):
 	if request.user.is_authenticated:
-		user = request.user
-		order, created = Order.objects.get_or_create(user=user, complete=False)
+		customer = request.user.customer
+		order, created = Order.objects.get_or_create(customer=customer, complete=False)
 		items = order.orderitem_set.all()
 		cartItems = order.get_cart_items
 	else:
@@ -89,39 +90,8 @@ def contact(request):
 
 	products = Product.objects.all()
 	context = {'products':products, 'cartItems':cartItems}
-	return render(request, 'blog/blog-details.html', context)
+	return render(request, 'store/contact.html', context)
 
-def blog(request):
-	if request.user.is_authenticated:
-		user = request.user
-		order, created = Order.objects.get_or_create(user=user, complete=False)
-		items = order.orderitem_set.all()
-		cartItems = order.get_cart_items
-	else:
-		#Create empty cart for now for non-logged in user
-		items = []
-		order = {'get_cart_total':0, 'get_cart_items':0, 'shipping':False}
-		cartItems = order['get_cart_items']
-
-	products = Product.objects.all()
-	context = {'products':products, 'cartItems':cartItems}
-	return render(request, 'blog/blog-details.html', context)
-
-def blog_details(request):
-	if request.user.is_authenticated:
-		user = request.user
-		order, created = Order.objects.get_or_create(user=user, complete=False)
-		items = order.orderitem_set.all()
-		cartItems = order.get_cart_items
-	else:
-		#Create empty cart for now for non-logged in user
-		items = []
-		order = {'get_cart_total':0, 'get_cart_items':0, 'shipping':False}
-		cartItems = order['get_cart_items']
-
-	products = Product.objects.all()
-	context = {'products':products, 'cartItems':cartItems}
-	return render(request, 'blog/blog-details.html', context)
 
 # vvvvvvvvvvvvvvvvvvvvvvvvvvvv ANTIGO vvvvvvvvvvvvvvvvvvvvvvvvvvvv
 
