@@ -23,6 +23,28 @@
     <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+
+    <script type="text/javascript">
+		var user = '{{request.user}}'
+
+		function getToken(name) {
+		    var cookieValue = null;
+		    if (document.cookie && document.cookie !== '') {
+		        var cookies = document.cookie.split(';');
+		        for (var i = 0; i < cookies.length; i++) {
+		            var cookie = cookies[i].trim();
+		            // Does this cookie string begin with the name we want?
+		            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+		                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+		                break;
+		            }
+		        }
+		    }
+		    return cookieValue;
+		}
+		var csrftoken = getToken('csrftoken')
+	</script>
+
 </head>
 
 <body>
@@ -47,7 +69,7 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="header__top__right">
                             <div class="header__top__right__social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="https://www.facebook.com/chocolateriadadiva"><i class="fa fa-facebook"></i></a>
                                 <a href="https://www.instagram.com/chocolateria_da_diva/"><i class="fa fa-instagram"></i></a>
                             <a class="header__top__right__auth">
                                     {% if user.is_authenticated %}
@@ -74,7 +96,7 @@
                 <div class="col-lg-6">
                     <nav class="header__menu">
                         <ul>
-                            <li class="active"><a href="{% url 'index' %}">Inicio</a></li>
+                            <li><a href="{% url 'index' %}">Inicio</a></li>
                             <li><a href="{% url 'shop-grid' %}">Loja</a></li>
                             <li><a href="#">Paginas</a>
                                 <ul class="header__menu__dropdown">
@@ -138,31 +160,35 @@
                             <div class="latest-product__text">
                                 <h4>Recentes</h4>
                                 <div class="latest-product__slider owl-carousel">
-                                    <div class="latest-prdouct__slider__item">
-                                        {% for product in products %}
-                                            <a href="#" class="latest-product__item">
-                                                <div class="latest-product__item__pic">
-                                                    <img style="width:100px; height: 100%;" src="{{product.imageURL}}" alt="">
-                                                </div>
-                                                <div class="latest-product__item__text">
-                                                    <h6>{{product.name}}</h6>
-                                                    <span>R${{product.price|floatformat:2}}</span>
-                                                </div>
-                                            </a>
-                                        {% endfor %}
+                                    <div class="latest-product__slider__item">
+                                        {% if p != null %}
+                                            {% for product in products %}
+                                                <a href="#" class="latest-product__item">
+                                                    <div class="latest-product__item__pic">
+                                                        <img style="width:100px; height: 100%;" src="{{product.imageURL}}" alt="">
+                                                    </div>
+                                                    <div class="latest-product__item__text">
+                                                        <h6>{{product.name}}</h6>
+                                                        <span>R${{product.price|floatformat:2}}</span>
+                                                    </div>
+                                                </a>
+                                            {% endfor %}
+                                        {% endif %}
                                     </div>
                                     <div class="latest-prdouct__slider__item">
-                                        {% for product in products %}
-                                            <a href="#" class="latest-product__item">
-                                                <div class="latest-product__item__pic">
-                                                    <img style="width:100px; height: 100%;" src="{{product.imageURL}}" alt="">
-                                                </div>
-                                                <div class="latest-product__item__text">
-                                                    <h6>{{product.name}}</h6>
-                                                    <span>R${{product.price|floatformat:2}}</span>
-                                                </div>
-                                            </a>
-                                        {% endfor %}
+                                        {% if p != null %}
+                                            {% for product in products %}
+                                                <a href="#" class="latest-product__item">
+                                                    <div class="latest-product__item__pic">
+                                                        <img style="width:100px; height: 100%;" src="{{product.imageURL}}" alt="">
+                                                    </div>
+                                                    <div class="latest-product__item__text">
+                                                        <h6>{{product.name}}</h6>
+                                                        <span>R${{product.price|floatformat:2}}</span>
+                                                    </div>
+                                                </a>
+                                            {% endfor %}
+                                        {% endif %}
                                     </div>
                                 </div>
                             </div>
@@ -176,23 +202,25 @@
                         </div>
                         <div class="row">
                             <div class="product__discount__slider owl-carousel">
-                                {% for product in products %}
-                                    <div class="col-lg-4">
-                                        <div class="product__discount__item">
-                                            <div class="product__discount__item__pic set-bg"
-                                                data-setbg="{{product.imageURL}}">
-                                                <div class="product__discount__percent">-20%</div>
-                                                <ul class="product__item__pic__hover">
-                                                    <li><a href="#" class="update-cart"><i class="fa fa-shopping-cart"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="product__discount__item__text">
-                                                <h5><a href="#">{{product.name}}</a></h5>
-                                                <div class="product__item__price">R${{product.price|floatformat:2}} <span>R${{product.price|floatformat:2}}</span></div>
+                                {% if products != null %}
+                                    {% for product in products %}
+                                        <div class="col-lg-4">
+                                            <div class="product__discount__item">
+                                                <div class="product__discount__item__pic set-bg"
+                                                    data-setbg="{{product.imageURL}}">
+                                                    <div class="product__discount__percent">-20%</div>
+                                                    <ul class="product__item__pic__hover">
+                                                        <li><a data-product="{{product.id}}" data-action="add" href="#" class="update-cart"><i class="fa fa-shopping-cart"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="product__discount__item__text">
+                                                    <h5><a href="#">{{product.name}}</a></h5>
+                                                    <div class="product__item__price">R${{product.price|floatformat:2}} <span>R${{product.price|floatformat:2}}</span></div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                {% endfor %}
+                                    {% endfor %}
+                                {% endif %}
                             </div>
                         </div>
                     </div>
@@ -210,7 +238,9 @@
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="filter__found">
-                                    <h6><span>{{products.count}}</span> Produtos encontrados</h6>
+                                    {% if products != null %}
+                                        <h6><span>{{products.count}}</span> Produtos encontrados</h6>
+                                    {% endif %}
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-3">
@@ -222,21 +252,23 @@
                         </div>
                     </div>
                     <div class="row">
-                        {% for product in products %}
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="product__item">
-                                    <div class="product__item__pic set-bg" data-setbg="{{product.imageURL}}">
-                                        <ul class="product__item__pic__hover">
-                                            <li><a href="#"><i class="fa fa-shopping-cart update-cart"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="product__item__text">
-                                        <h6><a href="#">{{product.name}}</a></h6>
-                                        <h5>R${{product.price|floatformat:2}}</h5>
+                        {% if products != null %}
+                            {% for product in products %}
+                                <div class="col-lg-4 col-md-6 col-sm-6">
+                                    <div class="product__item">
+                                        <div class="product__item__pic set-bg" data-setbg="{{product.imageURL}}">
+                                            <ul class="product__item__pic__hover">
+                                                <li><a href="#"><i data-product="{{product.id}}" data-action="add" class="fa fa-shopping-cart update-cart"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="product__item__text">
+                                            <h6><a href="#">{{product.name}}</a></h6>
+                                            <h5>R${{product.price|floatformat:2}}</h5>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        {% endfor %}
+                            {% endfor %}
+                        {% endif %}
                     </div>
                     <div class="product__pagination">
                         <a href="#">1</a>
@@ -293,9 +325,8 @@
                                 <input type="text" placeholder="Email">
                                 <button type="submit" class="site-btn">Inscrever</button>
                             </form>
-                            <div class="footer__widget__social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
+                                <a href="https://www.facebook.com/chocolateriadadiva"><i class="fa fa-facebook"></i></a>
+                                <a href="https://www.instagram.com/chocolateria_da_diva/"><i class="fa fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>

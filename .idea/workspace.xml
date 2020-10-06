@@ -26,15 +26,79 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c33b334d-fbe2-4b47-adca-cf5afe74b96b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/store/migrations/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ecommerce/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/banner/banner-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/banner/banner-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/blog/blog-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/blog/blog-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/blog/blog-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/blog/blog-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/blog/blog-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/blog/blog-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/blog/details/details-author.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/blog/details/details-hero.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/blog/details/details-pic.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/blog/sidebar/sr-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/blog/sidebar/sr-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/blog/sidebar/sr-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/cart/cart-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/cart/cart-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/cart/cart-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/featured/feature-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/featured/feature-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/featured/feature-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/featured/feature-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/featured/feature-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/featured/feature-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/featured/feature-7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/featured/feature-8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/latest-product/lp-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/latest-product/lp-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/latest-product/lp-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/product/details/product-details-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/product/details/product-details-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/product/details/product-details-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/product/details/product-details-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/product/details/product-details-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/product/details/thumb-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/product/details/thumb-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/product/details/thumb-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/product/details/thumb-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/product/discount/pd-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/product/discount/pd-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/product/discount/pd-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/product/discount/pd-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/product/discount/pd-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/product/discount/pd-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/product/product-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/product/product-10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/product/product-11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/product/product-12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/product/product-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/product/product-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/product/product-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/product/product-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/product/product-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/product/product-7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/product/product-8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/product/product-9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/store/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/store/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/store/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/store/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/store/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/blog/blog-details.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/blog/blog.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/registration/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/store/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/store/checkout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/store/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/store/contact.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/store/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/store/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/store/shop-grid.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/store/shop-grid.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/store/shoping-cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/store/shoping-cart.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +125,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../DJ_WEB" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -129,10 +193,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="92" y="92" width="1736" height="866" key="DiffContextDialog/-1280.235.1280.690/0.0.1920.1050@0.0.1920.1050" timestamp="1601768217904" />
-    <state x="740" y="280" key="FileChooserDialogImpl" timestamp="1601737125921">
+    <state x="740" y="280" key="FileChooserDialogImpl" timestamp="1601938342304">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="740" y="280" key="FileChooserDialogImpl/-1280.235.1280.690/0.0.1920.1050@0.0.1920.1050" timestamp="1601737125921" />
+    <state x="740" y="280" key="FileChooserDialogImpl/-1280.235.1280.690/0.0.1920.1050@0.0.1920.1050" timestamp="1601938342304" />
     <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1601736321389">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

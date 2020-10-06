@@ -48,7 +48,7 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="header__top__right">
                             <div class="header__top__right__social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="https://www.facebook.com/chocolateriadadiva"><i class="fa fa-facebook"></i></a>
                                 <a href="https://www.instagram.com/chocolateria_da_diva/"><i class="fa fa-instagram"></i></a>
                             <a class="header__top__right__auth">
                                     {% if user.is_authenticated %}
@@ -75,7 +75,7 @@
                 <div class="col-lg-6">
                     <nav class="header__menu">
                         <ul>
-                            <li class="active"><a href="{% url 'index' %}">Inicio</a></li>
+                            <li><a href="{% url 'index' %}">Inicio</a></li>
                             <li><a href="{% url 'shop-grid' %}">Loja</a></li>
                             <li><a href="#">Paginas</a>
                                 <ul class="header__menu__dropdown">
@@ -135,11 +135,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="hero__item set-bg" data-setbg="img/hero/banner.jpg">
+                    <div class="hero__item set-bg" data-setbg="{% static 'img/hero/banner.jpg' %}">
                         <div class="hero__text">
-                            <span style="color: #fff ">Cestas</span>
-                            <h2 style="color: #fff">Boteco na Caixa<br />Surpreenda seu cônjuge</h2>
-                            <a href="#" class="primary-btn" style="background-color: brown">Compre agora!</a>
+                            <span style="color: #fff ">Caixas</span>
+                            <h2 style="color:#fff">Boteco na Caixa<br />Surpreenda seu cônjuge</h2>
+                            <a href="#" class="primary-btn" style="background-color: #7fad39">Compre agora!</a>
                         </div>
                     </div>
                 </div>
@@ -154,27 +154,27 @@
             <div class="row">
                 <div class="categories__slider owl-carousel">
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="img/categories/cat-1.jpg">
+                        <div class="categories__item set-bg" data-setbg="{% static 'img/categories/cat-1.jpg' %}">
                             <h5><a href="#">Kit Bolos</a></h5>
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="img/categories/cat-2.jpg">
+                        <div class="categories__item set-bg" data-setbg="{% static 'img/categories/cat-2.jpg' %}">
                             <h5><a href="#">Caixas</a></h5>
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="img/categories/cat-3.jpg">
+                        <div class="categories__item set-bg" data-setbg="{% static 'img/categories/cat-3.jpg' %}">
                             <h5><a href="#">Docinhos</a></h5>
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="img/categories/cat-4.jpg">
+                        <div class="categories__item set-bg" data-setbg="{% static 'img/categories/cat-4.jpg' %}">
                             <h5><a href="#">Bolos de Pote</a></h5>
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="img/categories/cat-5.jpg">
+                        <div class="categories__item set-bg" data-setbg="{% static 'img/categories/cat-5.jpg' %}">
                             <h5><a href="#">Cestas</a></h5>
                         </div>
                     </div>
@@ -230,8 +230,8 @@
                                 <button type="submit" class="site-btn">Inscrever</button>
                             </form>
                             <div class="footer__widget__social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
+                                <a href="https://www.facebook.com/chocolateriadadiva"><i class="fa fa-facebook"></i></a>
+                                <a href="https://www.instagram.com/chocolateria_da_diva/"><i class="fa fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>

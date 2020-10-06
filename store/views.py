@@ -8,7 +8,7 @@ from django.contrib import auth
 from django.contrib.auth.models import User
 from rest_framework import viewsets
 from store.serializers import UserSerializer, ProductSerializer, ShippingAddressSerializer, OrderItemSerializer, \
-	OrderSerializer
+ 	OrderSerializer
 
 
 def index(request):
@@ -24,7 +24,7 @@ def index(request):
 		cartItems = order['get_cart_items']
 
 	products = Product.objects.all()
-	context = {'products':products, 'cartItems':cartItems}
+	context = {'order':order, 'items':items, 'products':products, 'cartItems':cartItems}
 	return render(request, 'store/index.html', context)
 
 def shop_grid(request):
@@ -40,7 +40,7 @@ def shop_grid(request):
 		cartItems = order['get_cart_items']
 
 	products = Product.objects.all()
-	context = {'products':products, 'cartItems':cartItems}
+	context = {'order':order, 'items':items, 'products':products, 'cartItems':cartItems}
 	return render(request, 'store/shop-grid.html', context)
 
 def shoping_cart(request):
@@ -56,8 +56,7 @@ def shoping_cart(request):
 		cartItems = order['get_cart_items']
 
 	products = Product.objects.all()
-	context = {'products':products, 'cartItems':cartItems}
-	return render(request, 'blog/blog-details.html', context)
+	context = {'order':order, 'items':items, 'products':products, 'cartItems':cartItems}
 	return render(request, 'store/shoping-cart.html', context)
 
 def checkout(request):
@@ -73,7 +72,7 @@ def checkout(request):
 		cartItems = order['get_cart_items']
 
 	products = Product.objects.all()
-	context = {'products':products, 'cartItems':cartItems}
+	context = {'order':order, 'items':items, 'products':products, 'cartItems':cartItems}
 	return render(request, 'store/checkout.html', context)
 
 def contact(request):
@@ -89,61 +88,12 @@ def contact(request):
 		cartItems = order['get_cart_items']
 
 	products = Product.objects.all()
-	context = {'products':products, 'cartItems':cartItems}
+	context = {'order':order, 'items':items, 'products':products, 'cartItems':cartItems}
 	return render(request, 'store/contact.html', context)
-
 
 # vvvvvvvvvvvvvvvvvvvvvvvvvvvv ANTIGO vvvvvvvvvvvvvvvvvvvvvvvvvvvv
 
-'''
-def store(request):
 
-	if request.user.is_authenticated:
-		customer = request.user.customer
-		order, created = Order.objects.get_or_create(customer=customer, complete=False)
-		items = order.orderitem_set.all()
-		cartItems = order.get_cart_items
-	else:
-		#Create empty cart for now for non-logged in user
-		items = []
-		order = {'get_cart_total':0, 'get_cart_items':0, 'shipping':False}
-		cartItems = order['get_cart_items']
-
-	products = Product.objects.all()
-	context = {'products':products, 'cartItems':cartItems}
-	return render(request, 'store/store.html', context)
-
-def cart(request):
-
-	if request.user.is_authenticated:
-		customer = request.user.customer
-		order, created = Order.objects.get_or_create(customer=customer, complete=False)
-		items = order.orderitem_set.all()
-		cartItems = order.get_cart_items
-	else:
-		#Create empty cart for now for non-logged in user
-		items = []
-		order = {'get_cart_total':0, 'get_cart_items':0, 'shipping':False}
-		cartItems = order['get_cart_items']
-
-	context = {'items':items, 'order':order, 'cartItems':cartItems}
-	return render(request, 'store/cart.html', context)
-
-def checkout(request):
-	if request.user.is_authenticated:
-		customer = request.user.customer
-		order, created = Order.objects.get_or_create(customer=customer, complete=False)
-		items = order.orderitem_set.all()
-		cartItems = order.get_cart_items
-	else:
-		#Create empty cart for now for non-logged in user
-		items = []
-		order = {'get_cart_total':0, 'get_cart_items':0, 'shipping':False}
-		cartItems = order['get_cart_items']
-
-	context = {'items':items, 'order':order, 'cartItems':cartItems}
-	return render(request, 'store/checkout.html', context)
-'''
 
 def updateItem(request):
 	data = json.loads(request.body)
@@ -153,17 +103,19 @@ def updateItem(request):
 	print('Product:', productId)
 
 	customer = request.user.customer
-	order, created = Order.objects.get_or_create(customer=customer, complete=False)
 	product = Product.objects.get(id=productId)
+	order, created = Order.objects.get_or_create(customer=customer, complete=False)
 
 	orderItem, created = OrderItem.objects.get_or_create(order=order, product=product)
 
 	if action == 'add':
 		orderItem.quantity = (orderItem.quantity + 1)
+		orderItem.save()
 	elif action == 'remove':
 		orderItem.quantity = (orderItem.quantity - 1)
-
-	orderItem.save()
+		orderItem.save()
+	elif action == 'delete':
+		orderItem.delete()
 
 	if orderItem.quantity <= 0:
 		orderItem.delete()
@@ -173,7 +125,6 @@ def updateItem(request):
 def processOrder(request):
 	transaction_id = datetime.datetime.now().timestamp()
 	data = json.loads(request.body)
-
 	if request.user.is_authenticated:
 		customer = request.user.customer
 		order, created = Order.objects.get_or_create(customer=customer, complete=False)
@@ -200,23 +151,23 @@ def processOrder(request):
 
 
 def login_view(request):
-    username = request.POST.get('username', '')
-    password = request.POST.get('password', '')
-    user = auth.authenticate(username=username, password=password)
-    if user is not None and user.is_active:
-        # Correct password, and the user is marked "active"
-        auth.login(request, user)
-        # Redirect to a success page.
-        return HttpResponseRedirect("/account/loggedin/")
-    else:
-        # Show an error page
-        return HttpResponseRedirect("/account/invalid/")
+	username = request.POST.get('username', '')
+	password = request.POST.get('password', '')
+	user = auth.authenticate(username=username, password=password)
+	if user is not None and user.is_active:
+		# Correct password, and the user is marked "active"
+		auth.login(request, user)
+		# Redirect to a success page.
+		return HttpResponseRedirect("index")
+	else:
+		# Show an error page
+		return HttpResponseRedirect("/account/login/")
 
 
 def logout_view(request):
-    auth.logout(request)
-    # Redirect to a success page.
-    return HttpResponseRedirect("/account/loggedout/")
+	auth.logout(request)
+	# Redirect to a success page.
+	return HttpResponseRedirect("index")
 
 
 class UserViewSet(viewsets.ModelViewSet):
