@@ -84,10 +84,10 @@ WSGI_APPLICATION = 'ecommerce.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'db_django',
-        'USER': 'usuario',
-        'PASSWORD': 'admin',
-        'HOST': 'localhost',
+        'NAME': 'IvensTR$default',
+        'USER': 'IvensTR',
+        'PASSWORD': 'projetofinal',
+        'HOST': 'IvensTR.mysql.pythonanywhere-services.com',
         'PORT': '',
     }
 }
