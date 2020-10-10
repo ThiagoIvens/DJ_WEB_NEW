@@ -4,9 +4,11 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 from rest_framework.authtoken.models import Token
 from django.conf import settings
+import logging
 
 
 # Create your models here.
+logger = logging.getLogger(__name__)
 
 class Customer(models.Model):
     customer = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -20,6 +22,9 @@ class Customer(models.Model):
     def create_user_customer(sender, instance, created, **kwargs):
         if created:
             Customer.objects.create(customer=instance)
+            logger.info('Cliente criado')
+        else:
+            logger.critical("Cliente nao foi criado")
 
     @receiver(post_save, sender=User)
     def save_user_customer(sender, instance, **kwargs):
@@ -45,7 +50,7 @@ class Product(models.Model):
 
 
 class Order(models.Model):
-    customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
+    customer = models.ForeignKey(Customer, on_delete=models.CASCADE, null=False)
     date_ordered = models.DateTimeField(auto_now_add=True)
     complete = models.BooleanField(default=False)
     transaction_id = models.CharField(max_length=100, null=True)
@@ -105,3 +110,6 @@ class ShippingAddress(models.Model):
 def create_auth_token(sender, instance=None, created=False, **kwargs):
     if created:
         Token.objects.create(user=instance)
+        logger.info("Token criado para o usuario: {{user.username}}")
+    else:
+        logger.error("Token não foi criado para o usuario: {{user.username}}")

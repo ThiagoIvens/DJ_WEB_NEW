@@ -3,6 +3,8 @@ from django.http import JsonResponse, HttpResponseRedirect
 import json
 import datetime
 
+from pip._internal.utils import logging
+
 from .models import *
 from django.contrib import auth
 from django.contrib.auth.models import User
@@ -12,6 +14,7 @@ from store.serializers import UserSerializer, ProductSerializer, ShippingAddress
 
 
 def index(request):
+
 	if request.user.is_authenticated:
 		customer = request.user.customer
 		order, created = Order.objects.get_or_create(customer=customer, complete=False)
@@ -66,6 +69,7 @@ def checkout(request):
 		items = order.orderitem_set.all()
 		cartItems = order.get_cart_items
 	else:
+		logger.warning("Usuario não autorizado")
 		#Create empty cart for now for non-logged in user
 		items = []
 		order = {'get_cart_total':0, 'get_cart_items':0, 'shipping':False}
@@ -145,7 +149,7 @@ def processOrder(request):
 			zipcode=data['shipping']['zipcode'],
 			)
 	else:
-		print('Usuário no está logado...')
+		logger.error('Usuário no está logado...')
 
 	return JsonResponse('Pagamento submetido..', safe=False)
 
@@ -158,6 +162,7 @@ def login_view(request):
 		# Correct password, and the user is marked "active"
 		auth.login(request, user)
 		# Redirect to a success page.
+		logger.info("usuario autorizado e redirecionado para pagina inicial")
 		return HttpResponseRedirect("index")
 	else:
 		# Show an error page
@@ -167,13 +172,13 @@ def login_view(request):
 def logout_view(request):
 	auth.logout(request)
 	# Redirect to a success page.
+	logger.info("usuario saiu")
 	return HttpResponseRedirect("index")
 
 
 class UserViewSet(viewsets.ModelViewSet):
 	serializer_class = UserSerializer
 	queryset = User.objects.all()
-
 
 class ProductViewSet(viewsets.ModelViewSet):
 	serializer_class = ProductSerializer

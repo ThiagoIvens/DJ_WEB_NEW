@@ -19,14 +19,7 @@ class ProductSerializer(serializers.HyperlinkedModelSerializer):
 class CustomerSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Customer
-        exclude = []
-
-class OrderSerializer(serializers.HyperlinkedModelSerializer):
-    lookup_field = 'user'
-    url = serializers.HyperlinkedIdentityField(view_name="user")
-    class Meta:
-        model = Order
-        exclude = []
+        exclude = ['customer']
 
 class OrderItemSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -34,6 +27,12 @@ class OrderItemSerializer(serializers.HyperlinkedModelSerializer):
         exclude = []
 
 class ShippingAddressSerializer(serializers.HyperlinkedModelSerializer):
+    customer = CustomerSerializer()
     class Meta:
         model = ShippingAddress
         exclude = []
+
+class OrderSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Order
+        exclude = ['customer']
